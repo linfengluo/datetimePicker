@@ -5,12 +5,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="keywords" content="DateTimePicker, date, dateTime, time, picker">
+    <title>DateTimePicker</title>
 </head>
 <body>
-<script src="/dist/datetimepacker.js"></script>
+<div id="timeSelect" style="color: #03a9f4; cursor: pointer;">点我选择时间</div>
+<div id="timeSelectValue" style="margin: 6px 0; ">你选择的时间：<span style="color: #2196f3;"></span></div>
+<pre>
+    <code>
+new DateTimePicker({
+    id: 'timeSelect',
+    type: 'time',
+    onSelect(val, date) {
+        document.querySelector('#timeSelectValue span').innerText = date
+    }
+})
+</code>
+</pre>
+<div style="border-bottom: 4px solid #f5f5f5; margin: 12px 0;"></div>
+<div id="dateSelect" style="color: #03a9f4; cursor: pointer;">点我选择日期</div>
+<div id="dateSelectValue" style="margin: 6px 0 20px;">你选择的日期：<span style="color: #2196f3;"></span></div>
+<pre>
+    <code>
+new DateTimePicker({
+  id: 'dateSelect',
+  type: 'date',
+  format: 'YYYY/MM/DD',
+  onSelect(val, date) {
+    document.querySelector('#dateSelectValue span').innerText = date
+  }
+})
+</code>
+</pre>
+<div style="border-bottom: 4px solid #f5f5f5; margin: 12px 0;"></div>
+<div id="dateTimeSelect" style="color: #03a9f4; cursor: pointer;">点我选择日期和时间</div>
+<div id="dateTimeSelectValue">你选择的日期和时间：<span style="color: #2196f3;"></span></div>
+<pre>
+    <code>
+new DateTimePicker({
+  id: 'dateTimeSelect',
+  type: 'dateTime',
+  onSelect(val, date) {
+    document.querySelector('#dateTimeSelectValue span').innerText = date
+  }
+})
+</code>
+</pre>
+<script src="./datetimepacker.js"></script>
 <script>
-    var date = new DateTimePicker()
+    new DateTimePicker({
+      id: 'timeSelect',
+      type: 'time',
+      onSelect(val, date) {
+        document.querySelector('#timeSelectValue span').innerText = date
+      }
+    })
+
+    new DateTimePicker({
+      id: 'dateTimeSelect',
+      type: 'dateTime',
+      onSelect(val, date) {
+        document.querySelector('#dateTimeSelectValue span').innerText = date
+      }
+    })
+
+    new DateTimePicker({
+      id: 'dateSelect',
+      type: 'date',
+      format: 'YYYY/MM/DD',
+      onSelect(val, date) {
+        document.querySelector('#dateSelectValue span').innerText = date
+      }
+    })
 </script>
 </body>
 </html>

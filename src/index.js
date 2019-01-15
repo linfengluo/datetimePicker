@@ -44,13 +44,14 @@ class DateTimePicker {
     closeText: '取消',
     sureText: '确定',
     showLoading: true,
-    showAnimate: true,
+    isShowAnimate: true,
+    className: '',
     type: 'dateTime',
     id: '',
     beginDate: new Date(1990, 1, 1),
     endDate: new Date(new Date().getFullYear() + 10, 12, 31),
     default: new Date(),
-    showSymbol: true,
+    isShowSymbol: true,
     symbols: null,
     format: null,
     disable:function (date) {
@@ -118,6 +119,7 @@ class DateTimePicker {
       values,
       {
         title: _this._defaultOptions.title,
+        addClassName: _this._defaultOptions.className,
         itemHeight: _this._defaultOptions.itemHeight,
         closeText: _this._defaultOptions.closeText,
         sureText: _this._defaultOptions.sureText,
@@ -127,15 +129,15 @@ class DateTimePicker {
         fourLevelId: defaultValue[3],
         fiveLevelId: defaultValue[4],
         showLoading: _this._defaultOptions.showLoading,
-        showSymbol: _this._defaultOptions.showSymbol,
-        symbols: _this._defaultOptions.showSymbol
+        showSymbol: _this._defaultOptions.isShowSymbol,
+        symbols: _this._defaultOptions.isShowSymbol
         ? _this._defaultOptions.symbols
           ? _this._defaultOptions.symbols
           : _this._symbols[_this._defaultOptions.type]
         : [],
         callback: _this._selectedCallback.bind(_this),
         fallback: _this._defaultOptions.fallback,
-        showAnimate: _this._defaultOptions.showAnimate,
+        showAnimate: _this._defaultOptions.isShowAnimate,
         relation: _this._defaultOptions.relation,
       });
   }

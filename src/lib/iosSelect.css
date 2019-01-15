@@ -256,6 +256,11 @@ ul, li {
     -webkit-animation: fadeOutDown .3s!important;
     animation: fadeOutDown .3s!important;
 }
+
+.ios-select-widget-box.fadeOutDown{
+    -webkit-animation: fadeOut .3s!important;
+    animation: fadeOut .3s!important;
+}
 @-webkit-keyframes loading-keyframe {
     from {
         -webkit-transform: rotate(0deg);
@@ -311,5 +316,24 @@ ul, li {
     to {
         opacity: 0;
         transform: translate3d(0, 100%, 0);
+    }
+}
+
+@-webkit-keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
     }
 }

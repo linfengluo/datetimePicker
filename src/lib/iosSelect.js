@@ -1161,13 +1161,12 @@
       }
     },
     removeDom: function () {
-      this.el.parentNode.removeChild(this.el);
-      this.el = null;
-      if (document.documentElement.classList.contains('ios-select-body-class')) {
-        document.documentElement.classList.remove('ios-select-body-class');
-        /*document.body.removeEventListener('touchmove', preventEventFun, {
-         passive: false
-         });*/
+      if (this.el) {
+        this.el.parentNode.removeChild(this.el);
+        this.el = null;
+        if (document.documentElement.classList.contains('ios-select-body-class')) {
+          document.documentElement.classList.remove('ios-select-body-class');
+        }
       }
     }
   }

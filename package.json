@@ -1,6 +1,6 @@
 {
-  "name": "llf-dateTimePicker",
-  "version": "1.0.0",
+  "name": "my-datetimeselect",
+  "version": "1.0.1",
   "description": "dateTimePicker",
   "main": "index.js",
   "scripts": {
